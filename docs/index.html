@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>basicseed.boilerplate</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <% styles.forEach(function(file) { %>
+      <link rel="stylesheet" type="text/css" href="<%= file %>" />
+    <% }); %>
+
+    <!--<link rel="stylesheet" href="build/css/app.css">    -->
+</head>
+<body>
+    <div class="container">
+
+        <button type="button" class="button">send info</button>
+
+    </div>
+
+    <% scripts.forEach(function(file) { %>
+      <script type="text/javascript" src="<%= file %>"></script>
+    <% }); %>
+
+</body>
+</html>
