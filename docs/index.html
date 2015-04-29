@@ -1,28 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>basicseed.boilerplate</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+---
+layout: default
+---
 
-    <% styles.forEach(function(file) { %>
-      <link rel="stylesheet" type="text/css" href="<%= file %>" />
-    <% }); %>
+<div class="home">
 
-    <!--<link rel="stylesheet" href="build/css/app.css">    -->
-</head>
-<body>
-    <div class="container">
+  <h1 class="page-heading">Posts</h1>
 
-        <button type="button" class="button">send info</button>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-    </div>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
 
-    <% scripts.forEach(function(file) { %>
-      <script type="text/javascript" src="<%= file %>"></script>
-    <% }); %>
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
-</body>
-</html>
+</div>

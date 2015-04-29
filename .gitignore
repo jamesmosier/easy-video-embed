@@ -22,3 +22,5 @@ coverage
 node_modules
 
 .sass-cache
+
+docs/_site

@@ -1,0 +1,18 @@
+# Site settings
+title: easy-video-embed
+email: james@jamesdmosier.com
+description: easy-video-embed is a JavaScript plugin that allows you to easily and dynamically embed YouTube and Vimeo videos on your site
+baseurl: "/easy-video-embed/" # the subpath of your site, e.g. /blog/
+url: "http://jamez14.github.io" # the base hostname & protocol for your site
+twitter_username: jamez14
+github_username:  jamez14
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+highlighter: rouge
+
+# Server
+source:      /docs
+encoding:   UTF-8
+#destination:   /
