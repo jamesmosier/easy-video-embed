@@ -63,7 +63,8 @@ module.exports = function(grunt) {
 
         //Empties the build folder to start fresh. Use the command: grunt clean
         clean: [
-            '<%= dist_dir %>'
+            '<%= dist_dir %>',
+            '<%= docs_dir %>/_site'
         ],
 
 
@@ -100,15 +101,20 @@ module.exports = function(grunt) {
         //Docs tasks
 
         jekyll: {
-            build: {
-                dest: '<%= docs_dir %>/_site'
+          options: {
+            src: '<%= docs_dir %>'
+          },
+            dist: {
+              options: {
+                dest: './docs/_site'
+              }
             }
         },
 
         sass: {
             dist: {
                 files: {
-                    '<%= docs_dir %>/css/docs.css': '<%= docs_dir %>/_sass/docs.scss'
+                    '<%= docs_dir %>/css/docs.css': 'docs/_sass/main.scss'
                 }
             }
         },
@@ -119,8 +125,8 @@ module.exports = function(grunt) {
                 src: ['<%= docs_dir %>/_site/css/*.css']
             },
             options: {
-                proxy: 'localhost',
-                port: 3333,
+                // proxy: 'localhost',
+                // port: 3333,
                 watchTask: true,
                 ghostMode: {
                     clicks: true,
@@ -128,6 +134,9 @@ module.exports = function(grunt) {
                     links: true,
                     forms: true
                 }
+            },
+            server: {
+                baseDir: '<%= docs_dir %>/_site'
             }
         },
 

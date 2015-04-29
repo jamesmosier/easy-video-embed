@@ -15,4 +15,4 @@ highlighter: rouge
 # Server
 source:      /docs
 encoding:   UTF-8
-#destination:   /
+destination:   ./docs/_site
