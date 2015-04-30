@@ -26,13 +26,13 @@
     // regularly referenced in your plugin).
 
     // Create the defaults once
-    var pluginName = 'easyVideoEmbed',
+    var pluginName = 'easyvideoembed',
         defaults = {
             videoSource: null
         };
 
     // The actual plugin constructor
-    function easyVideoEmbed(element, options) {
+    function EveInit(element, options) {
         this.element = element;
 
         // jQuery has an extend method that merges the
@@ -48,7 +48,7 @@
         this.init();
     }
 
-    easyVideoEmbed.prototype.init = function() {
+    EveInit.prototype.init = function() {
         // Place initialization logic here
         // You already have access to the DOM element and
         // the options via the instance, e.g. this.element
@@ -103,11 +103,11 @@
 
     // A really lightweight plugin wrapper around the constructor,
     // preventing against multiple instantiations
-    $.fn[easyVideoEmbed] = function(options) {
+    $.fn[pluginName] = function(options) {
         return this.each(function() {
             if (!$.data(this, 'plugin_' + pluginName)) {
                 $.data(this, 'plugin_' + pluginName,
-                    new easyVideoEmbed(this, options));
+                    new EveInit(this, options));
             }
         });
     }

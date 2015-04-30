@@ -1,9 +1,12 @@
 {
-  "name": "basicseed.boilerplate",
+  "name": "easy-video-embed Docs",
   "private": false,
-  "version": "0.0.7",
-  "description": "basicseedboilerplate for projects using grunt, bower, fontawesome, and SASS",
-  "repository": "https://github.com/jamez14/basicseed.boilerplate",
+  "version": "0.0.1",
+  "description": "easy-video-embed is a plugin for easily and dynamically embedding videos",
+  "repository": "https://github.com/jamez14/easy-video-embed",
   "license": "MIT",
-  "keywords": ["seed", "css", "framework", "responsive", "sass", "html", "web", "front-end", "frontend"]
+  "keywords": ["jquery", "video", "framework", "embed", "javascript", "html5", "youtube", "vimeo"],
+  "devDependencies": {
+  	"jQuery": "^1.11.x"
+  }
 }

@@ -4,20 +4,21 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">Posts</h1>
+<input type="text" id="video-src" value="https://youtu.be/D3LHA2w9zUc">
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+  <div id="video-goes-here"></div>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+
+    $("#video-src").easyvideoembed({
+      videoSource: "#video-goes-here"
+    });
+
+  });
+
+</script>
 
 </div>

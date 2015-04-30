@@ -43,6 +43,12 @@ module.exports = function(grunt) {
                     src: ['<%= src_dir %>/js/easyVideoEmbed.js'],
                     dest: '<%= docs_dir %>/js/',
                     filter: 'isFile'
+                }, {
+                    expand: true,
+                    flatten: true,
+                    src: ['<%= docs_dir %>/bower_packages/jQuery/dist/jquery.min.js'],
+                    dest: '<%= docs_dir %>/lib/',
+                    filter: 'isFile'
                 }]
             },
         },
@@ -93,8 +99,11 @@ module.exports = function(grunt) {
                 }
             },
             jekyll: {
-                files: ['<%= docs_dir %>/_layouts/*.html', '<%= docs_dir %>/_includes/*.html', '<%= docs_dir %>/js/*.js', '<%= docs_dir %>/_plugins/*', '<%= docs_dir %>/_posts/*', '<%= docs_dir %>/css/docs.css', '<%= docs_dir %>/index.html'],
-                tasks: ['jekyll']
+                files: ['<%= docs_dir %>/_layouts/*.html', '<%= docs_dir %>/_includes/*.html', '<%= docs_dir %>/js/*.js', '<%= docs_dir %>/_posts/*', '<%= docs_dir %>/css/docs.css', '<%= docs_dir %>/index.html'],
+                tasks: ['jekyll'],
+                options: {
+                    livereload: true
+                }
             },
         },
 
@@ -133,11 +142,13 @@ module.exports = function(grunt) {
                     scroll: true,
                     links: true,
                     forms: true
-                }
+                },
+                server: {
+                    baseDir: '<%= docs_dir %>/_site'
+                },
+                watchTask: true
             },
-            server: {
-                baseDir: '<%= docs_dir %>/_site'
-            }
+            
         },
 
 

@@ -24,3 +24,5 @@ node_modules
 .sass-cache
 
 docs/_site
+
+docs/bower_packages
