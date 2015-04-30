@@ -13,8 +13,9 @@ layout: default
 
   $(document).ready(function(){
 
-    $("#video-src").easyvideoembed({
-      videoSource: "#video-goes-here"
+    $("#video-goes-here").easyvideoembed({
+      videoSource: "#video-src",
+      responsive: false
     });
 
   });
