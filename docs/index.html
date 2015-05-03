@@ -2,26 +2,53 @@
 layout: default
 ---
 
-<div class="home">
+<div class="container-fluid">
 
-<input type="text" id="video-src" value="https://youtu.be/D3LHA2w9zUc">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>What's it do?</h2>
+      <p>
+        <b>easy video embed</b> is a jQuery plugin that allows you to easily and dynamically embed YouTube and Vimeo videos onto a page. Play with the example to the <span class="hidden-xs">right</span><span class="visible-xs">below</span> to see what it does.
+      </p>
+    </div>
+  </div>
 
-  <div id="video-goes-here"></div>
-  <!-- <div id="player"></div> -->
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Why use it?</h2>
+      <p>
+        <b>easy video embed</b> was inpired by a web app I was helping to create which had a news module. We allowed the user to create news articles with different types of media embeds, one of those being YouTube and Vimeo videos. All the users have to do is input a url and the video shows up. No copying embed code. No figuring out what the correct url to use is. Just simply copy &amp; paste.
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6 col-xs-12 first-sm">
+
+    </div>
+    <div class="col-sm-6 col-xs-12 first-xs">
+      <input type="text" id="video-src" value="https://youtu.be/D3LHA2w9zUc">
+
+      <div id="video-goes-here"></div>
+      <!-- <div id="player"></div> -->
+    </div>
+  </div>
 
 
-<script type="text/javascript">
-  $(document).ready(function(){
 
-    //$("#video-src").on('keyup', function(){
-      $("#video-goes-here").easyvideoembed({
-        videoSource: "#video-src",
-        responsive: false
-      });
-    //});
 
-  });
+  <script type="text/javascript">
+    $(document).ready(function(){
 
-</script>
+      //$("#video-src").on('keyup', function(){
+        $("#video-goes-here").easyvideoembed({
+          videoSource: "#video-src",
+          responsive: true
+        });
+      //});
+
+    });
+
+  </script>
 
 </div>
