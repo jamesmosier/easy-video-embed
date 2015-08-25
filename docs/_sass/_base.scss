@@ -12,15 +12,15 @@
   background: #666;
 }
 
-::selection {
-  background: $primary-color-light;
-  color: #fff;
-}
-
-::-moz-selection {
-  background: $primary-color-light;
-  color: #fff;
-}
+// ::selection {
+//   background: $primary-color-light;
+//   color: #333;
+// }
+//
+// ::-moz-selection {
+//   background: $primary-color-light;
+//   color: #333;
+// }
 
 /**
  * Basic styling
@@ -39,6 +39,10 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+}
+
+input{
+  color: #000;
 }
 
 /**

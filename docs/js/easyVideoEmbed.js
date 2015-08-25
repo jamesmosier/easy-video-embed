@@ -6,7 +6,6 @@
  * @preserve
  */
 
-//http://www.smashingmagazine.com/2011/10/11/essential-jquery-plugin-patterns/
 ;
 (function($, window, document, undefined) {
 
@@ -62,21 +61,21 @@
     var $output = $('#easyVideoEmbedMediaHidden');
 
     var youtube = url.match(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/);
-    if (youtube && youtube[2].length == 11) {
+    if (youtube && youtube[2].length === 11) {
 
 
-      media.type = "youtube";
+      media.type = 'youtube';
       media.id = youtube[2];
     }
 
     var vimeo = url.match(/(\.|\/\/)(vimeo\.com\/)[\w\/]*\d*((videos|video|channels)\/)*([\d]+)/);
     if (vimeo) {
-      media.type = "vimeo";
-      media.id = vimeo[0].substring(vimeo[0].lastIndexOf("/") + 1);
+      media.type = 'vimeo';
+      media.id = vimeo[0].substring(vimeo[0].lastIndexOf('/') + 1);
     }
 
-    var mediaLocator = media.type + ":" + media.id;
-    if (media.type && ($output.val() != mediaLocator)) {
+    var mediaLocator = media.type + ':' + media.id;
+    if (media.type && ($output.val() !== mediaLocator)) {
 
       $output.val(mediaLocator);
 
@@ -124,9 +123,9 @@
         .attr('webkitallowfullscreen', '')
         .attr('scrolling', 'no');
 
-      if (media.type == 'youtube') {
+      if (media.type === 'youtube') {
         $iframe.attr('src', '//www.youtube.com/embed/' + media.id);
-      } else if (media.type == "vimeo") {
+      } else if (media.type === 'vimeo') {
         $iframe.attr('src', '//player.vimeo.com/video/' + media.id);
       }
 
@@ -155,7 +154,7 @@
 
   };
 
-  // Helper Functions
+  // Private Helper Functions
   function isEmptyOrSpaces(str) {
     return str === null || str.match(/^ *$/) !== null;
   }

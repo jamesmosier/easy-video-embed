@@ -19,14 +19,6 @@
   height: 5px;
   background: #666; }
 
-::selection {
-  background: white;
-  color: #fff; }
-
-::-moz-selection {
-  background: white;
-  color: #fff; }
-
 /**
  * Basic styling
  */
@@ -44,6 +36,9 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column; }
+
+input {
+  color: #000; }
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
